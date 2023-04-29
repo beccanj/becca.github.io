@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practical2</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+     integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+     crossorigin=""/>
+
+     <!-- Make sure you put this AFTER Leaflet's CSS -->
+ <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+ integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+ crossorigin=""></script>
+
+</head>
+<style>
+    #map { height: 857px; }
+</style>
+<body>
+    <header class="header">
+        <a href="index.html" class="logo">Becca.</a>
+        <nav class="navbar">
+            <a href="index.html" >Home</a>
+            <a href="about.html">About</a>
+            <a href="map.html" class="active">Apps</a>
+        </nav>
+    </header>
+    <div id="map"></div> 
+
+    <script>
+        var map = L.map('map').setView([-1.096589, 37.015371], 13);
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+}).addTo(map);
+
+var marker = L.marker([-1.096589, 37.015371]).addTo(map);
+var marker1 = L.marker([-1.117635, 37.005093]).addTo(map);
+var marker2 = L.marker([-1.116801, 37.011169]).addTo(map);
+var marker3 = L.marker([-1.109850, 37.019988]).addTo(map);
+var marker4 = L.marker([-1.071182, 37.047124]).addTo(map);
+
+marker.bindPopup("<b>JKUAT</b><br>University of Higher Education.").openPopup();
+marker1.bindPopup("<b>Juja Preparatory</b><br>Primary School.").openPopup();
+marker2.bindPopup("<b>Kalimoni Senior School</b><br>High School.").openPopup();
+marker3.bindPopup("<b>Thiririka Pri. School</b><br>Primary School.").openPopup();
+marker4.bindPopup("<b>Mangu High</b><br>High School.").openPopup();
+    </script>
+</body>
+</html>
